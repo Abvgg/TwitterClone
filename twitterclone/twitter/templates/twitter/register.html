@@ -5,38 +5,36 @@
     <div class="twitter-login-box">
         <header>
             <img src="https://static01.nyt.com/images/2014/08/10/magazine/10wmt/10wmt-jumbo-v4.jpg?quality=90&auto=webp" alt="twitter logo">
-            <h1>Registrate en Twitter</h1>
+            <h1>Sing up on TwitterClone</h1>
         </header>
 
         <form method="post">
-           
+           {% csrf_token %}
             <div class="input-wrapper">
-                <label for="user-name-id">First Name</label>
-              
-            </div>
-            <div class="input-wrapper">
-                <label for="user-name-id">Username</label>
-               
-            </div>
-            <div class="input-wrapper">
-                <label for="user-name-id">Email</label>
-              
+                <label for="user-name-id">First Name {{ form.first_name }}</label>
             </div>
 
             <div class="input-wrapper">
-                <label for="password-id">Password</label>
-               
+                <label for="user-name-id">Username {{ form.username }}</label>
             </div>
+
             <div class="input-wrapper">
-                <label for="password-id">Confirm Password</label>
-                
+                <label for="user-name-id">Email {{ form.email }}</label>
+            </div>
+
+            <div class="input-wrapper">
+                <label for="password-id">Password {{ form.password1 }}</label>
+            </div>
+
+            <div class="input-wrapper">
+                <label for="password-id">Confirm Password {{ form.password2 }}</label>
             </div>
 
             <button class="twitter-btn">Registrarse</button>
         </form>
 
         <div class="footer">
-            <a href="#">¿Ya tienes una cuenta? Login</a>
+            <a href="#">Already have an account? Login</a>
         </div>
 
     </div>

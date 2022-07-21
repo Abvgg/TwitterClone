@@ -1,5 +1,5 @@
 {% extends 'twitter/layout.html' %}
-
+{% load humanize %}
 {% block content %}
 
     <div id="main" class="container-fluid d-flex">
@@ -14,7 +14,7 @@
                         <h5 class="card-title font-weight-bold">{{ request.user.first_name }}</h5>
                         <h6 class="card-title font-weight-bold">@{{ request.user }}</h6>
 
-                        <p class="card-text">{{ request.user.profile.bio }}</p>
+                        <p class="card-text">{{ request.user.profile.boi }}</p>
                         <h6 class="card-title font-weight-bold">
                             100 Followers
                             100 Following
@@ -78,7 +78,7 @@
                             {{post.user.first_name}}
                             </a>
                             <span>@{{ post.user }}</span><span>
-                            {{ post.timestamp }}
+                            {{ post.timestamp|naturaltime }}
                             </span>
                             <p>{{ post.content }}</p>
                         </div>
