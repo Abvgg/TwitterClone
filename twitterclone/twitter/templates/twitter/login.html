@@ -9,15 +9,13 @@
         </header>
 
         <form method="post">
-            
+            {% csrf_token %}
             <div class="input-wrapper">
-                <label for="user-name-id">Username</label>
-               
+                <label for="user-name-id">Username {{form.username}}</label>
             </div>
 
             <div class="input-wrapper">
-                <label for="password-id">Password</label>
-                
+                <label for="password-id">Password {{ form.password }}</label>               
             </div>
             
             <p>Username or password not correct.</p>
