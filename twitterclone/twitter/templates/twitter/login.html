@@ -17,10 +17,11 @@
             <div class="input-wrapper">
                 <label for="password-id">Password {{ form.password }}</label>               
             </div>
-            
-            <p>Username or password not correct.</p>
-            
 
+            {% if form.errors %}
+            <p>Username or password not correct.</p>
+            {% endif %}
+            
             <button class="twitter-btn">Log in</button>
         </form>
 

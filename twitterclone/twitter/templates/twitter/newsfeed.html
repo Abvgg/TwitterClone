@@ -9,7 +9,7 @@
                 <div class="card " style="width: 18rem; text-align:center;border-radius: 20px;">
                     <img class="card-img-top rounded-circle"
                         style="width:60%; position: relative;left: 62px;padding-top: 20px;"
-                        src="" alt="Card image cap">
+                        src="{{ request.user.profile.image.url }}" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title font-weight-bold">{{ request.user.first_name }}</h5>
                         <h6 class="card-title font-weight-bold">@{{ request.user }}</h6>
@@ -19,13 +19,13 @@
                             100 Followers
                             100 Following
                         </h6>
-                        <a href="#" class="btn  text-white rounded-pill">Mi perfil</a>
+                        <a href="#" class="btn  text-white rounded-pill">My profile</a>
                     </div>
 
                 </div>
                 <a href="" id="addATweetLeft" onclick="addTweet()" type="button"
                 style="border-radius: 30px; font-size: 1.1rem; font-weight:bold;"
-                class="btn btn-lg btn-block mt-4 text-white ">Editar mi perfil</a>
+                class="btn btn-lg btn-block mt-4 text-white ">Edit my profile</a>
             </div>
         </div>
         <!-- End Barra Izquierda -->
@@ -37,13 +37,14 @@
                 <div class="d-flex">
                     <div class="col-xs">
                         <!-- Image form -->
-                        <img src="" alt="" class="avator">
+                        <img src="{{ request.user.profile.image.url }}" alt="" class="avator">
                         <!-- Formulario -->
                     </div>
 
                     <!-- Formulario -->
                     <form class="col pr-0" method="post">
-                        
+                        {% csrf_token %}
+                        {{ form.content }}
                         <div class="container d-flex" style="padding: 1rem 0 0 0;">
                             <div id="leftBtn">
                                 <div id="charBadge" class="badge badge-pill badge-primary ml-2"
@@ -71,10 +72,10 @@
                 <!-- FOR LOOP HERE -->
                 <div class="tweet-wrap" style="border-radius:20px">
                     <div class="tweet-header">
-                        <img src=""
+                        <img src="{{ post.user.profile.image.url }}"
                             alt="" class="avator">
                         <div class="tweet-header-info">
-                            <a href="">
+                            <a href="{% url 'profile' post.user %}">
                             {{post.user.first_name}}
                             </a>
                             <span>@{{ post.user }}</span><span>
@@ -127,13 +128,13 @@
                     
 
                         <!-- DELETE -->
-                        
+                        {% if request.user == post.user %}
                         <div class="trash">
-                            <a href="" style="background: white; border: none;">
+                            <a href="{% url 'delete' post.id %}" style="background: white; border: none;">
                                 <i class="fa fa-trash-o" style="color:#657786; font-size: 20px" aria-hidden="true"></i>
                             </a>
                         </div>
-                       
+                       {% endif %}
                         <!-- END-DELETE -->
                     </div>
                 </div>
