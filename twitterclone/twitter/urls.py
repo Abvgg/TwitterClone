@@ -13,5 +13,6 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(), name='logout'),
     path('delete/<int:post_id>/', views.delete, name='delete'),
     path('profile/<str:username>/', views.profile, name='profile'),
+    path('editar/', views.editar, name='editar'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
