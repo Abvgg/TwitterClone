@@ -1,10 +1,12 @@
-import imp
+
 from django.shortcuts import redirect, render
 from .models import Profile, Post, Relationship
 from .forms import UserRegisterForm, PostForm, ProfileUpdateForm, UserUpdateForm
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 
 
+@login_required
 def home(request):
     posts = Post.objects.all()
     if request.method == 'POST':
@@ -47,6 +49,7 @@ def profile(request, username):
     return render(request, 'twitter/profile.html', context)
 
 
+@login_required
 def editar(request):
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)
@@ -65,6 +68,7 @@ def editar(request):
     return render(request, 'twitter/editar.html', context)
 
 
+@login_required
 def follow(request, username):
     current_user = request.user
     to_user = User.objects.get(username=username)
@@ -74,6 +78,7 @@ def follow(request, username):
     return redirect('home')
 
 
+@login_required
 def unfollow(request, username):
     current_user = request.user
     to_user = User.objects.get(username=username)
