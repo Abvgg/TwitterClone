@@ -13,7 +13,7 @@ class UserRegisterForm(UserCreationForm):
 
 
 class PostForm(forms.ModelForm):
-    content = forms.CharField(widget=forms.Textarea(attrs={'class':'form-control w-100', 'id':'contentsBox', 'row':'3', 'placeholder':'Whats new?'}))
+    content = forms.CharField(widget=forms.Textarea(attrs={'class':'form-control w-100', 'id':'contentsBox', 'row':'3', 'placeholder':"What's new?"}))
 
     class Meta:
         model = Post
