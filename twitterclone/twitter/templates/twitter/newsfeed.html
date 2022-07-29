@@ -10,7 +10,7 @@
                     <img class="card-img-top rounded-circle"
                         style="width:60%; position: relative;left: 62px;padding-top: 20px;"
                         src="{{ request.user.profile.image.url }}" alt="Card image cap">
-                    <div class="card-body">
+                    <div class="card-body" style="color:white">
                         <h5 class="card-title font-weight-bold">{{ request.user.first_name }}</h5>
                         <h6 class="card-title font-weight-bold">@{{ request.user }}</h6>
 
@@ -42,7 +42,7 @@
                     </div>
 
                     <!-- Formulario -->
-                    <form class="col pr-0" method="post">
+                    <form class="col pr-0" method="post" style="background-color: #4b4b4b">
                         {% csrf_token %}
                         {{ form.content }}
                         <div class="container d-flex" style="padding: 1rem 0 0 0;">
@@ -75,19 +75,19 @@
                         <img src="{{ post.user.profile.image.url }}"
                             alt="" class="avator">
                         <div class="tweet-header-info">
-                            <a href="{% url 'profile' post.user %}">
+                            <a href="{% url 'profile' post.user %}" style="color: #bc2bda;">
                             {{post.user.first_name}}
                             </a>
                             <span>@{{ post.user }}</span><span>
                             {{ post.timestamp|naturaltime }}
                             </span>
-                            <p>{{ post.content }}</p>
+                            <p style="color: #ffffff;">{{ post.content }}</p>
                         </div>
                     </div>
                     <div class="tweet-info-counts">
 
                         <div class="comments">
-                            <button style="background: white; border: none;"> 
+                            <button style="background: #4b4b4b; border: none;"> 
                             <svg class="feather feather-message-circle sc-dnqmqq jxshSx" xmlns="http://www.w3.org/2000/svg"
                                 width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -100,7 +100,7 @@
                         </div>
 
                         <div class="retweets">
-                            <button style="background: white; border: none;"> 
+                            <button style="background: #4b4b4b; border: none;"> 
                             <svg class="feather feather-repeat sc-dnqmqq jxshSx" xmlns="http://www.w3.org/2000/svg"
                                 width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -114,7 +114,7 @@
                         </div>
 
                         <div class="likes">
-                            <button style="background: white; border: none;"> 
+                            <button style="background: #4b4b4b; border: none;"> 
                             <svg class="feather feather-heart sc-dnqmqq jxshSx" xmlns="http://www.w3.org/2000/svg"
                                 width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -130,7 +130,7 @@
                         <!-- DELETE -->
                         {% if request.user == post.user %}
                         <div class="trash">
-                            <a href="{% url 'delete' post.id %}" style="background: white; border: none;">
+                            <a href="{% url 'delete' post.id %}" style="background: #4b4b4b; border: none;">
                                 <i class="fa fa-trash-o" style="color:#657786; font-size: 20px" aria-hidden="true"></i>
                             </a>
                         </div>
@@ -152,10 +152,10 @@
                 <div class="card-header">
                     Who to Follow
                 </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><a href="#" style="text-decoration: none;color: #657787;">@mundopython</a></li>
-                    <li class="list-group-item"><a href="#" style="text-decoration: none;color: #657787;">@mundopython</a></li>
-                    <li class="list-group-item"><a href="#" style="text-decoration: none;color: #657787;">@mundopython</a></li>
+                <ul class="list-group list-group-flush" >
+                    <li class="list-group-item"><a href="#" style="text-decoration: none;color: #657787;">@</a></li>
+                    <li class="list-group-item"><a href="#" style="text-decoration: none;color: #657787;">@</a></li>
+                    <li class="list-group-item"><a href="#" style="text-decoration: none;color: #657787;">@</a></li>
                 </ul>
             </div>
         </div>

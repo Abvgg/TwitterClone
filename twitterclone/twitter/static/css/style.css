@@ -1,5 +1,5 @@
 body {
-  background: #E6E8E9; /*15202b*/;
+  background: #3b3b3b; /*15202b*/;
   font-family: 'Asap', sans-serif;
   font-family: 'Roboto', sans-serif;
 }
@@ -9,7 +9,7 @@ img {
 }
 
 .navbar {
-  background-color: #1E96EB /*#E0245E*/;
+  background: linear-gradient(90deg, #73217e 0%, #9932ad 43%, #bc2bda 100%);
 }
 
 .navbar-brand {
@@ -24,10 +24,11 @@ img {
 
 .card {
   border: none;
+  background-color: #4b4b4b
 }
 
 .card-header {
-  background-color: #1E96EB /*#E0245E*/;
+  background-color: #bc2bda/*#E0245E*/;
   color: white;
   text-align: center;
   font-weight: bold;
@@ -56,13 +57,13 @@ img {
 
 .tweet-wrap {
   max-width: 490px;
-  background: #fff;
+  background: rgb(75, 75, 75);
   margin: 0 auto;
   margin-top: 50px;
   border-radius: 3px;
   padding: 30px;
-  border-bottom: 1px solid #e6ecf0;
-  border-top: 1px solid #e6ecf0;
+  border-bottom: 1px solid #4b4b4b;
+  border-top: 1px solid #4b4b4b;
 }
 
 .tweet-header {
@@ -76,7 +77,7 @@ img {
 }
 
 .tweet-header-info span {
-  color: #657786;
+  color: #b3b3b3;
   font-weight: normal;
   margin-left: 5px;
 }
@@ -133,14 +134,14 @@ img {
 }
 
 .btn {
-  background-color: #1E96EB /*E0245E*/ ;
+  background-color: #bc2bda/*E0245E*/ ;
   border-style: none;
   font-weight: bold;
   color: white;
 }
 
 #charBadge {
-  background-color: #1E96EB /*E0245E*/;
+  background-color: #a526be /*E0245E*/;
   position: relative;
   left: -8px;
   font-size: 1rem;
@@ -148,19 +149,19 @@ img {
 }
 
 a:link {
-  color: #1E96EB /*E0245E*/;
+  color: #a01eeb /*E0245E*/;
   text-decoration: none;
 }
 
 .btn:hover {
-  background-color: #71C4FF;
+  background-color: #bf5fff;
   color: white;
 }
 
 
 /* LOGIN PAGE*/
 .login-page{
-  background: white;
+  background: #3b3b3b;
 }
 
 .twitter-login-box {
@@ -187,7 +188,7 @@ a:link {
 
 .input-wrapper input{
     border: none;
-    background-color: #eee;
+    background-color: #4b4b4b;
     padding: 10px;
     font-size: 20px;
     border-bottom: 3px solid #6a6a6a;
@@ -202,13 +203,13 @@ a:link {
 }
 
 .input-wrapper label{
-    background-color: #eee;
+    background-color: #4b4b4b;
     padding: 10px;
-    color: #6a6a6a;
+    color: #acacac;
 }
 
 .twitter-btn{
-    background-color: #1E96EB;
+    background-color: #a01eeb;
     border: none;
     width: 100%;
     padding: 15px;
@@ -221,12 +222,17 @@ a:link {
 .twitter-login-box .footer{
     text-align: center;
     margin-top: 20px;
-    color: #1E96EB;
+    color: #a01eeb;
 }
 .twitter-login-box .footer a{
-    color: #1E96EB;
+    color: #a01eeb;
     text-decoration: none;
 }
 
 
+#contentsBox {
+  color: white;
+  font-family: Verdana;
+  font-size: 30;
+}
 
